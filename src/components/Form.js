@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef, useEffect} from "react";
 import { v4 as uuidv4 } from "uuid";
 
 function Form({ inputText, setInputText, todos, setTodos, setStatus }) {
@@ -22,7 +22,14 @@ function Form({ inputText, setInputText, todos, setTodos, setStatus }) {
 
   const statusHandler = (e) => {
     setStatus(e.target.value);
+
   };
+
+  const inputRef = useRef();
+
+  useEffect(()=> {
+    inputRef.current.focus()
+  })
 
   return (
     <form>
@@ -31,6 +38,7 @@ function Form({ inputText, setInputText, todos, setTodos, setStatus }) {
         value={inputText}
         type="text"
         className="todo-input"
+        ref={inputRef}
       />
       <button onClick={submitTodoHandler} className="todo-button" type="submit">
         <i className="fas fa-plus-square"></i>
