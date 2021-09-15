@@ -20,7 +20,7 @@ function Todo({ text, todo, todos, setTodos }) {
 
   return (
     <div className="todo">
-      <p className={`todo-item ${todo.completed ? "completed" : ""}`}>{`${todos.indexOf(todo)+1}.  ${text}`}</p>
+      <p className={`${todo.completed ? "todo-item completed" : "todo-item"}`}>{`${todos.indexOf(todo)+1}.  ${text}`}</p>
       <button onClick={completeHandler} className="complete-btn">
         <i className="fas fa-check"></i>
       </button>
