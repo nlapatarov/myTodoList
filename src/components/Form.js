@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+
 import { v4 as uuidv4 } from "uuid";
 
 function Form({ inputText, setInputText, todos, setTodos, setStatus }) {
@@ -25,9 +26,14 @@ function Form({ inputText, setInputText, todos, setTodos, setStatus }) {
   };
 
   const inputRef = useRef();
+
   useEffect(() => {
     inputRef.current.focus();
   }, []);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  });
 
   return (
     <form>
