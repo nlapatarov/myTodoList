@@ -31,10 +31,6 @@ function Form({ inputText, setInputText, todos, setTodos, setStatus }) {
     inputRef.current.focus();
   }, []);
 
-  useEffect(() => {
-    inputRef.current.focus();
-  });
-
   return (
     <form>
       <input
